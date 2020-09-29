@@ -105,7 +105,7 @@ p,
   margin: 4%;
 }
 .bio p {
-  margin-bottom: 0.5vw;
+  font-size: 1vw;
 }
 h1 {
   font-size: 6rem;
@@ -155,7 +155,7 @@ nav a {
   color: #626262;
 }
 nav span {
-  border-left: 3px solid #626262;
+  border-left: 2.5px solid #626262;
 }
 /*Title Section Styles*/
 .title-container {
@@ -211,6 +211,128 @@ button:hover {
   width: 100%;
 }
 
+@media only screen and (max-width: 1200px) {
+  body {
+    background-color: rgb(250, 242, 231);
+  }
+
+  nav span {
+    border-left: 2px solid #626262;
+  }
+
+  nav a {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .artist a {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .bio p {
+    font-size: 11px;
+    width: 100%;
+  }
+
+  .artist {
+    padding-bottom: 5%;
+  }
+
+  .artist a {
+    font-size: 17.5px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  img {
+    height: 200px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  .title-container div {
+    width: 100%;
+  }
+
+  .artist a {
+    font-size: 14px;
+  }
+
+  .bio p {
+    font-size: 9.5px;
+  }
+
+  .artist {
+    width: 45%;
+    text-align: center;
+    padding-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 606px) {
+  body {
+    background-color: whitesmoke;
+  }
+  .artist a {
+    font-size: 13.5px;
+  }
+
+  .bio p {
+    font-size: 9px;
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+
+  .artists-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .artist {
+    width: 75%;
+    text-align: center;
+    margin-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .artists-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .artist {
+    width: 75%;
+    text-align: center;
+    margin-left: 10%;
+  }
+  .title-container hr {
+    width: 100%;
+  }
+}
+
 /* QUESTIONS START HERE */
 /* ## Interview Questions
 
@@ -224,12 +346,14 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
     A: 1) add a webpage reader 
        2) Make it so that people are able to tab to different sections 
-       3) Set the colors of the webpage  
+       3) Choose a good color scheme that allows all users to be able to read your site  
 
 3. How would you explain the concept of a variable to someone new to programming?
 
-    A: Variables are 
+    A: Variables are sort of like place holders that store data or information in JS 
 
 4. What is the purpose of using functions in code?
+
+  A: To group large amounts of code together into a clean and easy to read block of code that then allows us to call upon it whenever we may need to.
 
 */
