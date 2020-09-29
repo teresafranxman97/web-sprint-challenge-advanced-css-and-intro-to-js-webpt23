@@ -247,7 +247,7 @@ console.log(artists);
  */
 function getArtistByIndex(array, index) {
   let artist = array[index];
-  return `The artist at index ${artists.id} is ${artists.name}.`;
+  return `The artist at index ${artist.id} is ${artist.name}.`;
 }
 getArtistByIndex(artists, 0);
 
@@ -256,9 +256,18 @@ getArtistByIndex(artists, 0);
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */) {
-  /* Code here */
+function get20s(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    let years = array[i].year.split("-");
+    if (years[0] >= 1990 && years[1] >= 2000) {
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
 }
+get20s(artists);
+console.log(artists);
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -271,8 +280,15 @@ function get20s(/* Code here */) {
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.
  */
 function removeArtist(array, num) {
-  const remove = artists.splice(array, num);
+  let removed = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].id === index) {
+      array.splice(index, 1);
+    }
+  }
+  return removed;
 }
+console.log(removeArtist(artists, 0));
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -295,7 +311,7 @@ function addArtist(artist) {
     genre: "Web Design",
     nationality: "Hispanic",
     bio:
-      "I love pandas, my family, and music. Favorite food would have to be coconut shrimp or stir fry and I think rock ROCKS!",
+      "I love pandas, fall, and music. Favorite food would have to be coconut shrimp or stir fry and I think rock ROCKS!",
   });
 }
 addArtist();
@@ -309,9 +325,16 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */) {
-  /* Code here */
+function lotsOfArt(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (artists[i].paintings > 100) {
+      newArr.push(artists[i]);
+    }
+  }
+  return newArr;
 }
+console.log(lotsOfArt(artists));
 
 // 🎨🎨 STRETCH 🎨🎨//
 
